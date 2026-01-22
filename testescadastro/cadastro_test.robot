@@ -1,6 +1,6 @@
 *** Settings ***
 Resource    ../configweb/configweb_page.resource
-Variables   ../config.py/credentials.py
+Variables   ../config/credentials.py
 Resource    ../pagebase/base.resource
 
 Test Setup       Abrir Sistema Maximinado

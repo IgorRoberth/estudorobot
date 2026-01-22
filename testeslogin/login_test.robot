@@ -1,6 +1,6 @@
 *** Settings ***
 # Importa o arquivo que você criou acima
-Variables   ../config.py/credentials.py
+Variables   ../config/credentials.py
 Resource    ../configweb/configweb_page.resource
 Resource    ../pagebase/base.resource
 
