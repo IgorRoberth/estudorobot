@@ -5,7 +5,7 @@ Resource    ../configweb/configweb_page.resource
 Resource    ../pagebase/base.resource
 
 # Pode usar Setup e Teardown para organizar a abertura/fechamento
-Test Setup       Abrir Sistema Maximinado
+Test Setup       Abrir Sistema Maximizado
 
 *** Test Cases ***
 Validar login de vendedor com sucesso
@@ -17,7 +17,7 @@ Validar login de vendedor com sucesso
     Clicar        ${LOGIN_PAGE_SUBMIT_BTN}
     
     # Validação dinâmica de sucesso
-    Validar Texto    ${LOGIN_PAGE_WELCOME_H2}    Bem-vindo(a), Igor Roberth Moura!
+    Validar Texto    ${LOGIN_PAGE_WELCOME_H2}    Bem-vindo(a), Igor Roberth!
     Sleep       2s
 
 Validar logout de vendedor
