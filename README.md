@@ -33,6 +33,7 @@ Bash pip install robotframework robotframework-browser Inicialize os binários d
 Bash rfbrowser init 🚀 Execução dos Testes Para rodar as suítes de Login e Cadastro juntas e gerar um relatório consolidado:
 
 Bash robot -d ./results testescadastro testeslogin 
+
 📂 Estrutura do Repositório de QA configweb/: Configurações de inicialização do navegador e setup do sistema.
 
 pagebase/: Keywords genéricas (DSL) e repositório de elementos (IDs/XPaths).
