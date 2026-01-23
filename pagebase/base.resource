@@ -19,9 +19,11 @@ Escrever Senha
     Type Secret    ${elemento}    ${texto}    
 
 Validar Texto
-    # O 'contains' garante que se tiver um texto parcial ele ainda valide
     [Arguments]    ${elemento}    ${texto_esperado}
-    Get Text       ${elemento}    contains    ${texto_esperado}
+    # Força o Robot a verificar se o elemento existe em no máximo 1 segundo
+    Wait For Elements State    ${elemento}    visible    timeout=1s
+    # Se ele existir, pegamos o texto rapidamente
+    Get Text    ${elemento}    contains    ${texto_esperado}
 
 Selecionar Categoria
     [Arguments]    ${nome_da_categoria}
