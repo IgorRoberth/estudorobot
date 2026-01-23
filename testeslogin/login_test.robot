@@ -9,16 +9,19 @@ Test Setup       Abrir Sistema Maximinado
 
 *** Test Cases ***
 Validar login de vendedor com sucesso
+
     Clicar        ${LOGIN_PAGE_SELLER_BTN}
     Escrever    ${LOGIN_PAGE_EMAIL_INPUT}    ${EMAIL_VALIDO}    
     Escrever    ${LOGIN_PAGE_PASS_INPUT}     ${SENHA_VALIDA}
+    Print
     Clicar        ${LOGIN_PAGE_SUBMIT_BTN}
     
     # Validação dinâmica de sucesso
-    Validar Texto    ${LOGIN_PAGE_WELCOME_H2}    Bem-vindo(a), Igor Roberth!
+    Validar Texto    ${LOGIN_PAGE_WELCOME_H2}    Bem-vindo(a), Igor Roberth Moura!
     Sleep       2s
 
 Validar logout de vendedor
+
     Clicar        ${LOGIN_PAGE_SELLER_BTN}
     Escrever    ${LOGIN_PAGE_EMAIL_INPUT}     ${EMAIL_VALIDO}
     Escrever    ${LOGIN_PAGE_PASS_INPUT}      ${SENHA_VALIDA}
@@ -28,6 +31,7 @@ Validar logout de vendedor
     Sleep       2s    
 
 Validar login de vendedor com email inválido
+    
     Clicar        ${LOGIN_PAGE_SELLER_BTN}
     # Aqui forçamos o erro digitando o e-mail errado
     Escrever    ${LOGIN_PAGE_EMAIL_INPUT}    ${EMAIL_INVALIDO}
@@ -35,17 +39,18 @@ Validar login de vendedor com email inválido
     Clicar        ${LOGIN_PAGE_SUBMIT_BTN}
 
     # Validação dinâmica da mensagem de erro
-    Validar Texto   elemento=${LOGIN_PAGE_ERROR_BOX}    texto_esperado=Erro de conexão. Verifique se o servidor está rodando.
+    Validar Texto   elemento=${LOGIN_PAGE_ERROR_BOX}    texto_esperado=E-mail inválido.
 
     Sleep       2s
 
 Validar login de vendedor com senha inválida
+    
     Clicar        ${LOGIN_PAGE_SELLER_BTN}
     Escrever    ${LOGIN_PAGE_EMAIL_INPUT}    ${EMAIL_VALIDO}
     Escrever    ${LOGIN_PAGE_PASS_INPUT}     ${SENHA_INVALIDA}
     Clicar        ${LOGIN_PAGE_SUBMIT_BTN}
 
     # Validação dinâmica da mensagem de erro
-    Validar Texto   elemento=${LOGIN_PAGE_ERROR_BOX}    texto_esperado=Erro de conexão. Verifique se o servidor está rodando.
+    Validar Texto   elemento=${LOGIN_PAGE_ERROR_BOX}    texto_esperado=Senha atual inválida.
 
     Sleep       2s

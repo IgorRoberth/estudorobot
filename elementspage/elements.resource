@@ -21,9 +21,9 @@ ${PRODUTO_QTD_INPUT}         id=estoque
 ${PRODUTO_CATEGORIA_SELECT}  id=categoria
 ${PRODUTO_IMAGEM_INPUT}      id=productImage
 ${CODIGO_PRODUTO_INPUT}      id=sku
-${MSG_CODIGO_REPETIDO}      id=messageContent
+${MSG_CODIGO_REPETIDO}       id=messageContent
 ${PRODUTO_MARCA_INPUT}       id=marca
 ${PRODUTO_SUBMIT_BTN}        id=submitBtn
 
 #URL de teste
-${TEST_URL}                 http://localhost/login/login.html
+${TEST_URL}                 http://localhost:8080/login/login.html

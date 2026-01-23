@@ -11,6 +11,7 @@ Validar tela de adicionar produto após login de vendedor com sucesso com Codigo
     Clicar        ${LOGIN_PAGE_SELLER_BTN}
     Escrever    ${LOGIN_PAGE_EMAIL_INPUT}    ${EMAIL_VALIDO}    
     Escrever    ${LOGIN_PAGE_PASS_INPUT}     ${SENHA_VALIDA}
+    Print
     Clicar        ${LOGIN_PAGE_SUBMIT_BTN}
     
     Sleep       2s
@@ -26,22 +27,19 @@ Validar tela de adicionar produto após login de vendedor com sucesso com Codigo
 
     Selecionar Categoria   Roupas & Acessórios
     Escrever    ${PRODUTO_MARCA_INPUT}       MarcaTeste
-    Escrever    ${CODIGO_PRODUTO_INPUT}      CAM-GLP-002
+    Escrever    ${CODIGO_PRODUTO_INPUT}      CAM-GLP-0056
     Sleep       2s
 
     # No seu caso de teste ou na seção de variáveis:
     ${CAMINHO_IMG}    Set Variable    ${EXECDIR}/imagem/camisa-masculina-manga-curta-preta-linho-malvon.jpg
     Fazer Upload de Imagem    ${PRODUTO_IMAGEM_INPUT}    ${CAMINHO_IMG}
-    
     Sleep       2s
     Clicar      ${PRODUTO_SUBMIT_BTN}
-
-    Sleep       3s
-
-    Validar Texto    ${MSG_CODIGO_REPETIDO}    SKU já existe: CAM-GLP-002. Use um SKU único.
+    Validar Texto    ${MSG_CODIGO_REPETIDO}     SKU já existe: CAM-GLP-0056. Use um SKU único.
     Sleep       2s
     
-Validar tela de adicionar produto após login de vendedor com sucesso com Codigo de Produto Novo
+    
+Validar tela de adicionar produto após login de vendedor com sucesso com Codigo de Produto Novo Com mensagem correta
 
     Clicar        ${LOGIN_PAGE_SELLER_BTN}
     Escrever    ${LOGIN_PAGE_EMAIL_INPUT}    ${EMAIL_VALIDO}    
@@ -53,20 +51,22 @@ Validar tela de adicionar produto após login de vendedor com sucesso com Codigo
     Clicar      ${LOGIN_PAGE_ADD_PRODUCT_BTN}
     Sleep       2s
     
-    Escrever    ${PRODUTO_NOME_INPUT}        Camisa Masculina Manga Curta
-    Escrever    ${PRODUTO_DESCRICAO_INPUT}   Produto com tecido de linho, ideal para o verão.
-    Escrever    ${PRODUTO_PRECO_INPUT}       99.90
+    Escrever    ${PRODUTO_NOME_INPUT}        Camisa Oversized Branca
+    Escrever    ${PRODUTO_DESCRICAO_INPUT}   Produto com tecido de algodão, ideal para o verão.
+    Escrever    ${PRODUTO_PRECO_INPUT}       130.90
     Escrever    ${PRODUTO_QTD_INPUT}         10
     Clicar      ${PRODUTO_CATEGORIA_SELECT}
 
     Selecionar Categoria   Roupas & Acessórios
-    Escrever    ${PRODUTO_MARCA_INPUT}       JK ROUPAS
-    Escrever    ${CODIGO_PRODUTO_INPUT}      CAM-GLP-005
+    Escrever    ${PRODUTO_MARCA_INPUT}       Voice
+    Escrever    ${CODIGO_PRODUTO_INPUT}      CAM-GLP-0077
     Sleep       2s
-
-    ${CAMINHO_IMG}    Set Variable    ${EXECDIR}/imagem/camisa-masculina-manga-curta-preta-linho-malvon.jpg
+    
+    ${CAMINHO_IMG}    Set Variable    ${EXECDIR}/imagem/oversized_branca.webp
     Fazer Upload de Imagem    ${PRODUTO_IMAGEM_INPUT}    ${CAMINHO_IMG}
     Sleep       2s
-    Clicar      ${PRODUTO_SUBMIT_BTN}
 
+    Clicar      ${PRODUTO_SUBMIT_BTN}
+    Validar Notificacao de Sucesso     Produto cadastrado com sucesso.
+    
     Sleep       3s

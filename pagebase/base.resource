@@ -36,3 +36,12 @@ Fazer Upload de Imagem
 Pausar para Inspeção
     [Documentation]    Interrompe o teste e abre uma janela pop-up. O navegador só fecha após clicar em OK.
     Pause Execution    Mensagem: O teste está pausado. Verifique o sistema e clique em OK para continuar.
+
+Validar Notificacao de Sucesso
+    [Arguments]    ${mensagem_esperada}
+    Wait For Elements State    id=messageContainer    visible    timeout=10s
+    Get Text    id=messageContent    contains    ${mensagem_esperada}
+
+Print
+    # O comando abaixo captura a página inteira (scroll completo)
+    Take Screenshot    fullPage=True
